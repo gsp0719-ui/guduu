@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000000;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    color: #fce8ef;
+}
+
+canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 1.5rem;
+    pointer-events: none;
+}
+
+.quote-card {
+    background: transparent;
+    border: none;
+    padding: 0;
+    max-width: 680px;
+    width: 95%;
+    text-align: center;
+    box-shadow: none;
+    pointer-events: auto;
+}
+
+.line {
+    font-size: clamp(1.1rem, 3.2vw, 1.55rem);
+    line-height: 1.45;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.04em;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeInUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 0 15px rgba(255, 80, 120, 0.5);
+}
+
+.line:last-child {
+    margin-bottom: 0;
+}
+
+.line-1 {
+    font-weight: 300;
+    color: #e8b8c2;
+    animation-delay: 0.5s;
+}
+
+.line-2 {
+    font-style: italic;
+    color: #f7cbd4;
+    animation-delay: 1.8s;
+}
+
+.line-3 {
+    font-weight: 400;
+    color: #ffffff;
+    animation-delay: 3.4s;
+}
+
+.line-4 {
+    font-weight: 400;
+    font-size: clamp(1.0rem, 2.8vw, 1.35rem);
+    color: #d8a8b4;
+    animation-delay: 5.0s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+@media (max-height: 700px) {
+    .overlay {
+        bottom: 2vh;
+    }
+    .line {
+        font-size: clamp(1.0rem, 2.8vw, 1.3rem);
+        margin-bottom: 0.4rem;
+    }
+}
